@@ -1,0 +1,10 @@
+C:\Users\vijaythapa333\Desktop\AnyStore\AnyStore\bin\Debug\AnyStore.exe.config
+C:\Users\vijaythapa333\Desktop\AnyStore\AnyStore\bin\Debug\AnyStore.exe
+C:\Users\vijaythapa333\Desktop\AnyStore\AnyStore\bin\Debug\AnyStore.pdb
+C:\Users\vijaythapa333\Desktop\AnyStore\AnyStore\obj\Debug\AnyStore.csprojResolveAssemblyReference.cache
+C:\Users\vijaythapa333\Desktop\AnyStore\AnyStore\obj\Debug\AnyStore.frmAdminDashboard.resources
+C:\Users\vijaythapa333\Desktop\AnyStore\AnyStore\obj\Debug\AnyStore.Properties.Resources.resources
+C:\Users\vijaythapa333\Desktop\AnyStore\AnyStore\obj\Debug\AnyStore.csproj.GenerateResource.Cache
+C:\Users\vijaythapa333\Desktop\AnyStore\AnyStore\obj\Debug\AnyStore.exe
+C:\Users\vijaythapa333\Desktop\AnyStore\AnyStore\obj\Debug\AnyStore.pdb
+C:\Users\vijaythapa333\Desktop\AnyStore\AnyStore\obj\Debug\AnyStore.frmUserDashboard.resources
