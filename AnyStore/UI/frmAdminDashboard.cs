@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnyStore.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace AnyStore
         public frmAdminDashboard()
         {
             InitializeComponent();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsers user = new frmUsers();
+            user.Show();
         }
     }
 }
