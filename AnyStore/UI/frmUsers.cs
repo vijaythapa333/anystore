@@ -154,5 +154,25 @@ namespace AnyStore.UI
             DataTable dt = dal.Select();
             dgvUsers.DataSource = dt;
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            //Get Keyword from Text box
+            string keywords = txtSearch.Text;
+
+            //Chec if the keywords has value or not
+            if(keywords!=null)
+            {
+                //Show user based on keywords
+                DataTable dt = dal.Search(keywords);
+                dgvUsers.DataSource = dt;
+            }
+            else
+            {
+                //show all users from the database
+                DataTable dt = dal.Select();
+                dgvUsers.DataSource = dt;
+            }
+        }
     }
 }
