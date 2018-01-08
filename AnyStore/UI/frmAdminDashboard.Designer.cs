@@ -128,9 +128,8 @@
             this.lblLoggedInUser.ForeColor = System.Drawing.Color.LimeGreen;
             this.lblLoggedInUser.Location = new System.Drawing.Point(47, 41);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
-            this.lblLoggedInUser.Size = new System.Drawing.Size(81, 17);
+            this.lblLoggedInUser.Size = new System.Drawing.Size(0, 17);
             this.lblLoggedInUser.TabIndex = 3;
-            this.lblLoggedInUser.Text = "Vijay Thapa";
             // 
             // lblAppFName
             // 
@@ -181,6 +180,7 @@
             this.Text = "Admin Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAdminDashboard_FormClosed);
+            this.Load += new System.EventHandler(this.frmAdminDashboard_Load);
             this.pnlFooter.ResumeLayout(false);
             this.pnlFooter.PerformLayout();
             this.menuStripTop.ResumeLayout(false);
