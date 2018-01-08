@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\loginBLL.cs" />
     <Compile Include="BLL\userBLL.cs" />
+    <Compile Include="DAL\loginDAL.cs" />
     <Compile Include="DAL\userDAL.cs" />
     <Compile Include="UI\frmAdminDashboard.cs">
       <SubType>Form</SubType>

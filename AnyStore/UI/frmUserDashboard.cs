@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnyStore.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace AnyStore
         public frmUserDashboard()
         {
             InitializeComponent();
+        }
+
+        private void frmUserDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            login.Show();
+            this.Hide();
         }
     }
 }

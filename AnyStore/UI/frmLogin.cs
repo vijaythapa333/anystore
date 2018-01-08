@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AnyStore.BLL;
+using AnyStore.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,10 +19,61 @@ namespace AnyStore.UI
             InitializeComponent();
         }
 
+        loginBLL l = new loginBLL();
+        loginDAL dal = new loginDAL();
+
         private void pboxClose_Click(object sender, EventArgs e)
         {
             //Code to close this form
             this.Close();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            l.username = txtUsername.Text.Trim();
+            l.password = txtPassword.Text.Trim();
+            l.user_type = cmbUserType.Text.Trim();
+
+            //Checking the login credentials
+            bool sucess = dal.loginCheck(l);
+            if(sucess==true)
+            {
+                //Login Successfull
+                MessageBox.Show("Login Successful.");
+                //Need to open Respective Forms based on User Type
+                switch(l.user_type)
+                {
+                    case "Admin":
+                        {
+                            //Display Admin Dashboard
+                            frmAdminDashboard admin = new frmAdminDashboard();
+                            admin.Show();
+                            this.Hide();
+                        }
+                        break;
+
+                    case "User":
+                        {
+                            //Display User Dashboard
+                            frmUserDashboard user = new frmUserDashboard();
+                            user.Show();
+                            this.Hide();
+                        }
+                        break;
+
+                    default:
+                        {
+                            //Display an error message
+                            MessageBox.Show("Invalid User Type.");
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                //login Failed
+                MessageBox.Show("Login Failed. Try Again");
+            }
         }
     }
 }
