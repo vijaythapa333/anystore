@@ -204,5 +204,41 @@ namespace AnyStore.DAL
             return isSuccess;
         }
         #endregion
+        #region Method for Searh Funtionality
+        public DataTable Search(string keywords)
+        {
+            //SQL Connection For Database Connection
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            //Creating Data TAble to hold the data from database temporarily
+            DataTable dt = new DataTable();
+
+            try
+            {
+                //SQL Query To Search Categories from DAtabase
+                String sql = "SELECT * FROM tbl_categories WHERE id LIKE '%"+keywords+"%' OR title LIKE '%"+keywords+"%' OR description LIKE '%"+keywords+"%'";
+                //Creating SQL Command to Execute the Query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                //Getting DAta From DAtabase
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                //Open DatabaseConnection
+                conn.Open();
+                //Passing values from adapter to Data Table dt
+                adapter.Fill(dt);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
+        }
+        #endregion
     }
 }

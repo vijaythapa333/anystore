@@ -140,5 +140,25 @@ namespace AnyStore.UI
                 MessageBox.Show("Failed to Delete CAtegory");
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            //Get the Keywords
+            string keywords = txtSearch.Text;
+
+            //Filte the categories based on keywords
+            if(keywords!=null)
+            {
+                //Use Searh Method To Display Categoreis
+                DataTable dt = dal.Search(keywords);
+                dgvCategories.DataSource = dt;
+            }
+            else
+            {
+                //Use Select Method to Display All Categories
+                DataTable dt = dal.Select();
+                dgvCategories.DataSource = dt;
+            }
+        }
     }
 }
