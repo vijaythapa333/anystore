@@ -29,9 +29,9 @@ namespace AnyStore.DAL
                 //Wrting SQL Query to get all the data from DAtabase
                 string sql = "SELECT * FROM tbl_categories";
 
-                SqlCommand cmd = new SqlCommand();
+                SqlCommand cmd = new SqlCommand(sql, conn);
 
-                SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 //Open DAtabase Connection
                 conn.Open();
                 //Adding the value from adapter to Data TAble dt
