@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnyStore.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,18 @@ namespace AnyStore.UI
         {
             //Add code to hide this form
             this.Hide();
+        }
+
+        categoriesDAL cdal = new categoriesDAL();
+        private void frmProducts_Load(object sender, EventArgs e)
+        {
+            //Creating DAta Table to hold the categories from Database
+            DataTable categoriesDT = cdal.Select();
+            //Specify DataSource for Category ComboBox
+            cmbCategory.DataSource = categoriesDT;
+            //Specify Display Member and Value Member for Combobox
+            cmbCategory.DisplayMember = "title";
+            cmbCategory.ValueMember = "title";
         }
     }
 }
