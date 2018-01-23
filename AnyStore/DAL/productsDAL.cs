@@ -120,7 +120,7 @@ namespace AnyStore.DAL
             try
             {
                 //SQL Query to Update Data in dAtabase
-                String sql = "UPDATE tbl_products SET name=@name, category=@category, description=@description, rate=@rate, qty=@qty, added_date=@added_date, added_by=@added_by WHERE id=@id";
+                String sql = "UPDATE tbl_products SET name=@name, category=@category, description=@description, rate=@rate, added_date=@added_date, added_by=@added_by WHERE id=@id";
 
                 //Create SQL Cmmand to pass the value to query
                 SqlCommand cmd = new SqlCommand(sql, conn);
