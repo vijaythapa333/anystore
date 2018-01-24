@@ -29,5 +29,11 @@ namespace AnyStore
         {
             lblLoggedInUser.Text = frmLogin.loggedIn;
         }
+
+        private void dealerAndCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDeaCust DeaCust = new frmDeaCust();
+            DeaCust.Show();
+        }
     }
 }

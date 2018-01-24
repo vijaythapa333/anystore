@@ -212,5 +212,40 @@ namespace AnyStore.DAL
             return isSuccess;
         }
         #endregion
+        #region SEARCH Method for Product Module
+        public DataTable Search (string keywords)
+        {
+            //SQL Connection fro DB Connection
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            //Creating DAtaTable to hold value from dAtabase
+            DataTable dt = new DataTable();
+
+            try
+            {
+                //SQL query to search product
+                string sql = "SELECT * FROM tbl_products WHERE id LIKE '%"+keywords+"%' OR name LIKE '%"+keywords+"%' OR category LIKE '%"+keywords+"%'";
+                //Sql Command to execute Query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                //SQL Data Adapter to hold the data from database temporarily
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                //Open Database Connection
+                conn.Open();
+
+                adapter.Fill(dt);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
+        }
+        #endregion
     }
 }
