@@ -13,3 +13,4 @@ C:\Users\vijaythapa333\Desktop\anystore\AnyStore\obj\Debug\AnyStore.UI.frmLogin.
 C:\Users\vijaythapa333\Desktop\anystore\AnyStore\obj\Debug\AnyStore.UI.frmCategories.resources
 C:\Users\vijaythapa333\Desktop\anystore\AnyStore\obj\Debug\AnyStore.UI.frmProducts.resources
 C:\Users\vijaythapa333\Desktop\anystore\AnyStore\obj\Debug\AnyStore.UI.frmDeaCust.resources
+C:\Users\vijaythapa333\Desktop\anystore\AnyStore\obj\Debug\AnyStore.UI.frmPurchaseAndSales.resources
