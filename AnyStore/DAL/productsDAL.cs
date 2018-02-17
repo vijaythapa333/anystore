@@ -247,5 +247,49 @@ namespace AnyStore.DAL
             return dt;
         }
         #endregion
+        #region METHOD TO SEARCH PRODUCT IN TRANSACTION MODULE
+        public productsBLL GetProductsForTransaction(string keyword)
+        {
+            //Create an object of productsBLL and return it
+            productsBLL p = new productsBLL();
+            //SqlConnection
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            //Datatable to store data temporarily
+            DataTable dt = new DataTable();
+
+            try
+            {
+                //Write the Query to Get the detaisl
+                string sql = "SELECT name, rate, qty FROM tbl_products WHERE id LIKE '%"+keyword+"%' OR name LIKE '%"+keyword+"%'";
+                //Create Sql Data Adapter to Execute the query
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+
+                //Open DAtabase Connection
+                conn.Open();
+
+                //Pass the value from adapter to dt
+                adapter.Fill(dt);
+
+                //If we have any values on dt then set the values to productsBLL
+                if(dt.Rows.Count>0)
+                {
+                    p.name = dt.Rows[0]["name"].ToString();
+                    p.rate = decimal.Parse(dt.Rows[0]["rate"].ToString());
+                    p.qty = decimal.Parse(dt.Rows[0]["qty"].ToString());
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                //Close Database Connection
+                conn.Close();
+            }
+
+            return p;
+        }
+        #endregion
     }
 }

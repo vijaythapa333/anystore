@@ -24,6 +24,7 @@ namespace AnyStore.UI
             this.Hide();
         }
         DeaCustDAL dcDAL = new DeaCustDAL();
+        productsDAL pDAL = new productsDAL();
         private void frmPurchaseAndSales_Load(object sender, EventArgs e)
         {
             //Get the transactionType value from frmUserDashboard
@@ -55,6 +56,30 @@ namespace AnyStore.UI
             txtEmail.Text = dc.email;
             txtContact.Text = dc.contact;
             txtAddress.Text = dc.address;
+        }
+
+        private void txtSearchProduct_TextChanged(object sender, EventArgs e)
+        {
+            //Get the keyword from productsearch textbox
+            string keyword = txtSearchProduct.Text;
+
+            //Check if we have value to txtSearchProduct or not
+            if(keyword=="")
+            {
+                txtProductName.Text = "";
+                txtInventory.Text = "";
+                txtRate.Text = "";
+                TxtQty.Text = "";
+                return;
+            }
+
+            //Search the product and display on respective textboxes
+            productsBLL p = pDAL.GetProductsForTransaction(keyword);
+
+            //Set the values on textboxes based on p object
+            txtProductName.Text = p.name;
+            txtInventory.Text = p.qty.ToString();
+            txtRate.Text = p.rate.ToString();
         }
     }
 }
