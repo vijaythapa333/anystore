@@ -128,5 +128,64 @@ namespace AnyStore.UI
                 TxtQty.Text = "0.00";
             }
         }
+
+        private void txtDiscount_TextChanged(object sender, EventArgs e)
+        {
+            //Get the value fro discount textbox
+            string value = txtDiscount.Text;
+
+            if(value=="")
+            {
+                //Display Error Message
+                MessageBox.Show("Please Add Discount First");
+            }
+            else
+            {
+                //Get the discount in decimal value
+                decimal subTotal = decimal.Parse(txtSubTotal.Text);
+                decimal discount = decimal.Parse(txtDiscount.Text);
+
+                //Calculate the grandtotal based on discount
+                decimal grandTotal = ((100 - discount) / 100) * subTotal;
+
+                //Display the GrandTotla in TextBox
+                txtGrandTotal.Text = grandTotal.ToString();
+            }
+            
+        }
+
+        private void txtVat_TextChanged(object sender, EventArgs e)
+        {
+            //Check if the grandTotal has value or not if it has not value then calculate the discount first
+            string check = txtGrandTotal.Text;
+            if(check=="")
+            {
+                //Deisplay the error message to calcuate discount
+                MessageBox.Show("Calculate the discount and set the Grand Total First.");
+            }
+            else
+            {
+                //Calculate VAT
+                //Getting the VAT Percent first
+                decimal previousGT = decimal.Parse(txtGrandTotal.Text);
+                decimal vat = decimal.Parse(txtVat.Text);
+                decimal grandTotalWithVAT=((100+vat)/100)*previousGT;
+
+                //Displaying new grand total with vat
+                txtGrandTotal.Text = grandTotalWithVAT.ToString();
+            }
+        }
+
+        private void txtPaidAmount_TextChanged(object sender, EventArgs e)
+        {
+            //Get the paid amount and grand total
+            decimal grandTotal = decimal.Parse(txtGrandTotal.Text);
+            decimal paidAmount = decimal.Parse(txtPaidAmount.Text);
+
+            decimal returnAmount = paidAmount - grandTotal;
+
+            //Display the return amount as well
+            txtReturnAmount.Text = returnAmount.ToString();
+        }
     }
 }
