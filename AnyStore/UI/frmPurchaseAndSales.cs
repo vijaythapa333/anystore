@@ -25,12 +25,20 @@ namespace AnyStore.UI
         }
         DeaCustDAL dcDAL = new DeaCustDAL();
         productsDAL pDAL = new productsDAL();
+
+        DataTable transactionDT = new DataTable();
         private void frmPurchaseAndSales_Load(object sender, EventArgs e)
         {
             //Get the transactionType value from frmUserDashboard
             string type = frmUserDashboard.transactionType;
             //Set the value on lblTop
             lblTop.Text = type;
+
+            //Specify Columns for our TransactionDataTable
+            transactionDT.Columns.Add("Product Name");
+            transactionDT.Columns.Add("Rate");
+            transactionDT.Columns.Add("Quantity");
+            transactionDT.Columns.Add("Total");
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -80,6 +88,45 @@ namespace AnyStore.UI
             txtProductName.Text = p.name;
             txtInventory.Text = p.qty.ToString();
             txtRate.Text = p.rate.ToString();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            //Get Product Name, Rate and Qty customer wants to buy
+            string productName = txtProductName.Text;
+            decimal Rate = decimal.Parse(txtRate.Text);
+            decimal Qty = decimal.Parse(TxtQty.Text);
+
+            decimal Total = Rate * Qty; //Total=RatexQty
+
+            //Display the Subtotal in textbox
+            //Get the subtotal value from textbox
+            decimal subTotal = decimal.Parse(txtSubTotal.Text);
+            subTotal = subTotal + Total;
+
+            //Check whether the product is selected or not
+            if(productName=="")
+            {
+                //Display error MEssage
+                MessageBox.Show("Select the product first. Try Again.");
+            }
+            else
+            {
+                //Add product to the dAta Grid View
+                transactionDT.Rows.Add(productName,Rate,Qty,Total);
+
+                //Show in DAta Grid View
+                dgvAddedProducts.DataSource = transactionDT;
+                //Display the Subtotal in textbox
+                txtSubTotal.Text = subTotal.ToString();
+
+                //Clear the Textboxes
+                txtSearchProduct.Text = "";
+                txtProductName.Text = "";
+                txtInventory.Text = "0.00";
+                txtRate.Text = "0.00";
+                TxtQty.Text = "0.00";
+            }
         }
     }
 }
