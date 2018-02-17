@@ -243,6 +243,55 @@ namespace AnyStore.DAL
             return dt;
         }
         #endregion
+        #region METHOD TO SAERCH DEALER Or CUSTOMER FOR TRANSACTON MODULE
+        public DeaCustBLL SearchDealerCustomerForTransaction(string keyword)
+        {
+            //Create an object for DeaCustBLL class
+            DeaCustBLL dc = new DeaCustBLL();
+
+            //Create a DAtabase Connection
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            //Create a DAta Table to hold the value temporarily
+            DataTable dt = new DataTable();
+
+            try
+            {
+                //Write a SQL Query to Search Dealer or Customer Based on Keywords
+                string sql = "SELECT name, email, contact, address from tbl_dea_cust WHERE id LIKE '%"+keyword+"%' OR name LIKE '%"+keyword+"%'";
+
+                //Create a Sql Data Adapter to Execute the Query
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+
+                //Open the DAtabase Connection
+                conn.Open();
+
+                //Transfer the data from SqlData Adapter to DAta Table
+                adapter.Fill(dt);
+
+                //If we have values on dt we need to save it in dealerCustomer BLL
+                if(dt.Rows.Count>0)
+                {
+                    dc.name = dt.Rows[0]["name"].ToString();
+                    dc.email = dt.Rows[0]["email"].ToString();
+                    dc.contact = dt.Rows[0]["contact"].ToString();
+                    dc.address = dt.Rows[0]["address"].ToString();
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                //Close Database connection
+                conn.Close();
+            }
+
+            return dc;
+        }
+        #endregion
 
     }
 }
