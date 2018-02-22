@@ -34,14 +34,14 @@
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deealerAndCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblLoggedInUser = new System.Windows.Forms.Label();
             this.lblAppFName = new System.Windows.Forms.Label();
             this.lblLName = new System.Windows.Forms.Label();
             this.lblSHead = new System.Windows.Forms.Label();
-            this.deealerAndCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlFooter.SuspendLayout();
             this.menuStripTop.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +75,7 @@
             this.productsToolStripMenuItem,
             this.deealerAndCustomerToolStripMenuItem,
             this.inventoryToolStripMenuItem,
-            this.transactionsToolStripMenuItem});
+            this.transactionToolStripMenuItem});
             this.menuStripTop.Location = new System.Drawing.Point(0, 0);
             this.menuStripTop.Name = "menuStripTop";
             this.menuStripTop.Size = new System.Drawing.Size(1192, 24);
@@ -103,17 +103,18 @@
             this.productsToolStripMenuItem.Text = "Products";
             this.productsToolStripMenuItem.Click += new System.EventHandler(this.productsToolStripMenuItem_Click);
             // 
+            // deealerAndCustomerToolStripMenuItem
+            // 
+            this.deealerAndCustomerToolStripMenuItem.Name = "deealerAndCustomerToolStripMenuItem";
+            this.deealerAndCustomerToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
+            this.deealerAndCustomerToolStripMenuItem.Text = "Deealer and Customer";
+            this.deealerAndCustomerToolStripMenuItem.Click += new System.EventHandler(this.deealerAndCustomerToolStripMenuItem_Click);
+            // 
             // inventoryToolStripMenuItem
             // 
             this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
             this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.inventoryToolStripMenuItem.Text = "Inventory";
-            // 
-            // transactionsToolStripMenuItem
-            // 
-            this.transactionsToolStripMenuItem.Name = "transactionsToolStripMenuItem";
-            this.transactionsToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
-            this.transactionsToolStripMenuItem.Text = "Transactions";
             // 
             // lblUser
             // 
@@ -166,12 +167,12 @@
             this.lblSHead.TabIndex = 6;
             this.lblSHead.Text = "Billing and Inventory Management";
             // 
-            // deealerAndCustomerToolStripMenuItem
+            // transactionToolStripMenuItem
             // 
-            this.deealerAndCustomerToolStripMenuItem.Name = "deealerAndCustomerToolStripMenuItem";
-            this.deealerAndCustomerToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
-            this.deealerAndCustomerToolStripMenuItem.Text = "Deealer and Customer";
-            this.deealerAndCustomerToolStripMenuItem.Click += new System.EventHandler(this.deealerAndCustomerToolStripMenuItem_Click);
+            this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
+            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.transactionToolStripMenuItem.Text = "Transaction";
+            this.transactionToolStripMenuItem.Click += new System.EventHandler(this.transactionToolStripMenuItem_Click);
             // 
             // frmAdminDashboard
             // 
@@ -210,13 +211,13 @@
         private System.Windows.Forms.ToolStripMenuItem categoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem transactionsToolStripMenuItem;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblLoggedInUser;
         private System.Windows.Forms.Label lblAppFName;
         private System.Windows.Forms.Label lblLName;
         private System.Windows.Forms.Label lblSHead;
         private System.Windows.Forms.ToolStripMenuItem deealerAndCustomerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transactionToolStripMenuItem;
     }
 }
 

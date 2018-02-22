@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -71,6 +72,78 @@ namespace AnyStore.DAL
             }
 
             return isSuccess;
+        }
+        #endregion
+        #region METHOD TO DISPLAY ALL THE TRANSACTION
+        public DataTable DisplayAllTransactions()
+        {
+            //SQlConnection First
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            //Create a DAta Table to hold the datafrom database temporarily
+            DataTable dt = new DataTable();
+
+            try
+            {
+                //Write the SQL Query to Display all Transactions
+                string sql = "SELECT * FROM tbl_transactions";
+
+                //SqlCommand to Execute Query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                //SqlDataAdapter to Hold the data from database
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                //Open DAtabase Connection
+                conn.Open();
+
+                adapter.Fill(dt);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
+        }
+        #endregion
+        #region METHOD TO DISPLAY TRANSACTION BASED ON TRANSACTION TYPE
+        public DataTable DisplayTransactionByType(string type)
+        {
+            //Create SQL Connection
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            //Create a DataTable
+            DataTable dt = new DataTable();
+
+            try
+            {
+                //Write SQL Query
+                string sql = "SELECT * FROM tbl_transactions WHERE type='"+type+"'";
+
+                //SQL Command to Execute Query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //SQlDataAdapter to hold the data from database
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                //Open DAtabase Connection
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
         }
         #endregion
     }
