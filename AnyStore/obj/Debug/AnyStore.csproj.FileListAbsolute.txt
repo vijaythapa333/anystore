@@ -15,3 +15,4 @@ C:\Users\vijaythapa333\Desktop\anystore\AnyStore\obj\Debug\AnyStore.UI.frmProduc
 C:\Users\vijaythapa333\Desktop\anystore\AnyStore\obj\Debug\AnyStore.UI.frmDeaCust.resources
 C:\Users\vijaythapa333\Desktop\anystore\AnyStore\obj\Debug\AnyStore.UI.frmPurchaseAndSales.resources
 C:\Users\vijaythapa333\Desktop\anystore\AnyStore\obj\Debug\AnyStore.UI.frmTransactions.resources
+C:\Users\vijaythapa333\Desktop\anystore\AnyStore\obj\Debug\AnyStore.UI.frmInventory.resources
