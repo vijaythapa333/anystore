@@ -24,4 +24,4 @@ You can learn develop this project on yor self by watching the tutorial series a
 3. Open the solution file in visual studio (If you can't open, try deleting the folder with '.vs/something')
 4. Now, Use anyway you like.
 
-For any queries, Email at - h1@vijaythapa.com
+For any queries, Email at - hi@vijaythapa.com
