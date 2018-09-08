@@ -57,6 +57,7 @@
     <Compile Include="BLL\userBLL.cs" />
     <Compile Include="DAL\categoriesDAL.cs" />
     <Compile Include="DAL\DeaCustDAL.cs" />
+    <Compile Include="DAL\DGVPrinter.cs" />
     <Compile Include="DAL\loginDAL.cs" />
     <Compile Include="DAL\productsDAL.cs" />
     <Compile Include="DAL\transactionDAL.cs" />
