@@ -3,7 +3,7 @@
 This is a simple desktop application developed in microsoft platform while creating a Tutorial Series for youtube.
 You can learn develop this project on yor self by watching the tutorial series at https://www.youtube.com/watch?v=Lttd3ohTarE&list=PLBLPjjQlnVXVnz3Hksi1th0uHXxh6Dm3h
 
-# YouTube Channel - https://www.youtube.com/vijaythapa333
+# YouTube Channel - https://www.youtube.com/vijaythapa
 
 ## Tools and Technologies Used
 1. C# programming language in 3-tier architecture
@@ -20,8 +20,17 @@ You can learn develop this project on yor self by watching the tutorial series a
 
 ## Instructions to Use
 1. Download or Clone the source code from Here: https://github.com/vijaythapa333/anystore/
-2. Extract the Database and restore
+2. Extract the Database and restore (Follow Restoring part of this tutorial  https://www.youtube.com/watch?v=_yF5Kh_MMKo&list=PLBLPjjQlnVXXH_1g7ApcuIGPWRzMEKreK&index=8)
 3. Open the solution file in visual studio (If you can't open, try deleting the folder with '.vs/something')
 4. Now, Use anyway you like.
+
+## Login Credentials
+### For Admin
+Username: admin
+Password: admin
+
+### For User
+Username: user
+Password: user
 
 For any queries, Email at - hi@vijaythapa.com
