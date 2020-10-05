@@ -18,6 +18,18 @@ You can learn develop this project on yor self by watching the tutorial series a
 5. Purchase and Sales Module - Purchase Products from Dealer and Sell Products to Consumers
 6. Transactions Module - View the Products Purchased and Sold on Particula dates.
 
+
+
+## Support Developer
+1. Subscribe & Share my YouTube Channel - https://bit.ly/vijay-thapa-online-courses
+2. Add a Star 🌟  to this 👆 Repository
+
+## Donate
+
+**Donate by wire transfer:** contact *donate@vijaythapa.com* for wire transfer details. 
+
+
+
 ## Instructions to Use
 1. Download or Clone the source code from Here: https://github.com/vijaythapa333/anystore/
 2. Extract the Database and restore (Follow Restoring part of this tutorial  https://www.youtube.com/watch?v=_yF5Kh_MMKo&list=PLBLPjjQlnVXXH_1g7ApcuIGPWRzMEKreK&index=8)
