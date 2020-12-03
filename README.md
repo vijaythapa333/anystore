@@ -24,10 +24,14 @@ You can learn develop this project on yor self by watching the tutorial series a
 1. Subscribe & Share my YouTube Channel - https://bit.ly/vijay-thapa-online-courses
 2. Add a Star 🌟  to this 👆 Repository
 
+
 ## Donate
 
-**Donate by wire transfer:** contact *donate@vijaythapa.com* for wire transfer details. 
+**[PayPal](https://bit.ly/support-vijay-thapa)**
 
+**[Buy me a Coffee  ☕️](https://www.buymeacoffee.com/vijaythapa)**
+
+**Donate by wire transfer:** E-Mail at *donate@vijaythapa.com* for wire transfer details. 
 
 
 ## Instructions to Use
